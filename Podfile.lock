@@ -1,0 +1,10 @@
+PODS:
+  - ACEDrawingView (1.1.0)
+
+DEPENDENCIES:
+  - ACEDrawingView
+
+SPEC CHECKSUMS:
+  ACEDrawingView: c11f95c576d5d0ae81f1c17d0ecbf81007f7034d
+
+COCOAPODS: 0.28.0

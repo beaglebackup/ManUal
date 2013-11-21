@@ -28,6 +28,8 @@
 		EF42406F182F17660085E780 /* WallBarrier.m in Sources */ = {isa = PBXBuildFile; fileRef = EF42406E182F17660085E780 /* WallBarrier.m */; };
 		EF424072182F17760085E780 /* FloorBarrier.m in Sources */ = {isa = PBXBuildFile; fileRef = EF424071182F17760085E780 /* FloorBarrier.m */; };
 		EF424075182F36320085E780 /* MultiUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = EF424074182F36320085E780 /* MultiUnits.m */; };
+		EF42CE04183DD7B600E1EB7B /* ACEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF42CE03183DD7B600E1EB7B /* ACEViewController.m */; };
+		FA98FC7E9DF1486A9218DF3B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A43506F8164A049DF066E0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA3E59FF3D304BC7BB6C192A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EF094F12182E09E0004B352C /* ManUal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManUal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF094F15182E09E0004B352C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EF094F17182E09E0004B352C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +77,9 @@
 		EF424071182F17760085E780 /* FloorBarrier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorBarrier.m; sourceTree = "<group>"; };
 		EF424073182F36320085E780 /* MultiUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiUnits.h; sourceTree = "<group>"; };
 		EF424074182F36320085E780 /* MultiUnits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiUnits.m; sourceTree = "<group>"; };
+		EF42CE02183DD7B600E1EB7B /* ACEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEViewController.h; sourceTree = "<group>"; };
+		EF42CE03183DD7B600E1EB7B /* ACEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEViewController.m; sourceTree = "<group>"; };
+		F0A43506F8164A049DF066E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 				EF094F18182E09E0004B352C /* CoreGraphics.framework in Frameworks */,
 				EF094F1A182E09E0004B352C /* UIKit.framework in Frameworks */,
 				EF094F16182E09E0004B352C /* Foundation.framework in Frameworks */,
+				FA98FC7E9DF1486A9218DF3B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +114,7 @@
 				EF094F3A182E09E0004B352C /* ManUalTests */,
 				EF094F14182E09E0004B352C /* Frameworks */,
 				EF094F13182E09E0004B352C /* Products */,
+				DA3E59FF3D304BC7BB6C192A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +134,7 @@
 				EF094F17182E09E0004B352C /* CoreGraphics.framework */,
 				EF094F19182E09E0004B352C /* UIKit.framework */,
 				EF094F34182E09E0004B352C /* XCTest.framework */,
+				F0A43506F8164A049DF066E0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,6 +147,8 @@
 				EF094F27182E09E0004B352C /* Main.storyboard */,
 				EF094F2A182E09E0004B352C /* ViewController.h */,
 				EF094F2B182E09E0004B352C /* ViewController.m */,
+				EF42CE02183DD7B600E1EB7B /* ACEViewController.h */,
+				EF42CE03183DD7B600E1EB7B /* ACEViewController.m */,
 				EF094F2D182E09E0004B352C /* Images.xcassets */,
 				EF094F1C182E09E0004B352C /* Supporting Files */,
 			);
@@ -194,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF094F44182E09E0004B352C /* Build configuration list for PBXNativeTarget "ManUal" */;
 			buildPhases = (
+				3C6740F2C21E4AD2A80C86B7 /* Check Pods Manifest.lock */,
 				EF094F0E182E09E0004B352C /* Sources */,
 				EF094F0F182E09E0004B352C /* Frameworks */,
 				EF094F10182E09E0004B352C /* Resources */,
+				020D52ACE2504221860C4AFF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +295,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		020D52ACE2504221860C4AFF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C6740F2C21E4AD2A80C86B7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF094F0E182E09E0004B352C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -292,6 +338,7 @@
 				EF094F55182E0D0F004B352C /* Encasements.m in Sources */,
 				EF094F4F182E0A3B004B352C /* Interceptors.m in Sources */,
 				EF094F4C182E0A1F004B352C /* FollowUp.m in Sources */,
+				EF42CE04183DD7B600E1EB7B /* ACEViewController.m in Sources */,
 				EF094F52182E0AA8004B352C /* Manual.m in Sources */,
 				EF094F26182E09E0004B352C /* AppDelegate.m in Sources */,
 				EF424072182F17760085E780 /* FloorBarrier.m in Sources */,
@@ -420,6 +467,7 @@
 		};
 		EF094F45182E09E0004B352C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA3E59FF3D304BC7BB6C192A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -436,6 +484,7 @@
 		};
 		EF094F46182E09E0004B352C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA3E59FF3D304BC7BB6C192A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GZf-SM-pFP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="wSI-DL-edw">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="GZf-SM-pFP" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yU7-mT-XzZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Zu9-g7-0ci"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmw-x5-3RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-267" y="778"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -25,13 +41,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sO4-zx-U8d">
-                                        <rect key="frame" x="0.0" y="21" width="320" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="26"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpp-nH-THA">
                                         <rect key="frame" x="31" y="47" width="54" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,12 +239,37 @@
                                             <action selector="mtotalButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zjl-iM-3Lf"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G17-0W-Nx1">
+                                        <rect key="frame" x="110" y="17" width="109" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Manual">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="manualEmailButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6YE-Mh-uMp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRB-wm-qnE">
+                                        <rect key="frame" x="244" y="17" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="->">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="RGA-Dc-2YW" kind="push" id="VmM-0R-htD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Sun-LT-cSS"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="clear" destination="E89-wo-A1Y" id="DRD-rq-I0D"/>
                         <outlet property="encasementsTextField" destination="UlO-K6-Ni4" id="v2X-qn-1QU"/>
@@ -263,6 +297,141 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="254" y="778"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GQD-k2-XbJ">
+            <objects>
+                <viewController id="RGA-Dc-2YW" customClass="ACEViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="am2-Fv-7Wi"/>
+                        <viewControllerLayoutGuide type="bottom" id="qUM-uF-vTD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OHN-dN-6ci">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6g4-Z7-NGD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-p7-GUU">
+                                        <rect key="frame" x="-5" y="6" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <barButtonItem enabled="NO" title="Undo" id="kX3-9d-Xt7">
+                                                <connections>
+                                                    <action selector="undo:" destination="RGA-Dc-2YW" id="bWV-l0-YdV"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem enabled="NO" title="Redo" id="dJN-XX-oyy">
+                                                <connections>
+                                                    <action selector="redo:" destination="RGA-Dc-2YW" id="N0Q-5l-ByF"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Clear" id="aew-GN-zsp">
+                                                <connections>
+                                                    <action selector="clear:" destination="RGA-Dc-2YW" id="L9t-zg-8NF"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="YTd-CR-d23">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q2H-4L-gTg">
+                                                    <rect key="frame" x="170" y="12" width="21" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="X">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="clearAll:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="e3w-g2-N0H"/>
+                                                        <segue destination="vXZ-lx-hvc" kind="push" id="do9-zw-65g"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="hfW-Mr-6za"/>
+                                            <barButtonItem systemItem="camera" id="fgL-RT-bhj">
+                                                <connections>
+                                                    <action selector="takeScreenshot:" destination="RGA-Dc-2YW" id="lhx-KK-cw8"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Hr-kd-yKP" customClass="ACEDrawingView">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="d53-ST-0Ia">
+                                        <rect key="frame" x="18" y="377" width="284" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <action selector="toggleWidthSlider:" destination="RGA-Dc-2YW" eventType="valueChanged" id="dNc-NW-Uh2"/>
+                                            <action selector="widthChange:" destination="RGA-Dc-2YW" eventType="valueChanged" id="KPH-xA-zGI"/>
+                                        </connections>
+                                    </slider>
+                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000149011612" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="02r-Cp-Hia">
+                                        <rect key="frame" x="18" y="378" width="284" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <action selector="alphaChange:" destination="RGA-Dc-2YW" eventType="valueChanged" id="gnz-9S-YZI"/>
+                                            <action selector="toggleAlphaSlider:" destination="RGA-Dc-2YW" eventType="valueChanged" id="8yH-oS-EWX"/>
+                                        </connections>
+                                    </slider>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-mT-N26">
+                                        <rect key="frame" x="150" y="64" width="151" height="225"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6bo-tC-KR0">
+                                        <rect key="frame" x="0.0" y="429" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem title="Black" id="HPn-O7-35N">
+                                                <connections>
+                                                    <action selector="colorChange:" destination="RGA-Dc-2YW" id="XxY-Jg-qhF"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Pen" id="YCH-cC-zaI">
+                                                <connections>
+                                                    <action selector="toolChange:" destination="RGA-Dc-2YW" id="2ra-ZX-Gmh"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="r0q-mz-jDR"/>
+                                            <barButtonItem title="Width" id="QtN-Xg-miA">
+                                                <connections>
+                                                    <action selector="toggleWidthSlider:" destination="RGA-Dc-2YW" id="f34-I3-GCY"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Opac" id="QF3-bv-j33">
+                                                <connections>
+                                                    <action selector="toggleAlphaSlider:" destination="RGA-Dc-2YW" id="V0f-4n-Qhk"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                                <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qeI-fv-jBz"/>
+                    <connections>
+                        <outlet property="alphaButton" destination="QF3-bv-j33" id="Qcp-ZV-wno"/>
+                        <outlet property="colorButton" destination="HPn-O7-35N" id="zVD-JM-orP"/>
+                        <outlet property="drawingView" destination="8Hr-kd-yKP" id="IeD-AN-iLX"/>
+                        <outlet property="lineAlphaSlider" destination="02r-Cp-Hia" id="hBv-fK-oWT"/>
+                        <outlet property="lineWidthSlider" destination="d53-ST-0Ia" id="p1B-hg-kkG"/>
+                        <outlet property="previewImageView" destination="Ra9-mT-N26" id="hJH-Lt-OeF"/>
+                        <outlet property="redoButton" destination="dJN-XX-oyy" id="3Of-eE-4b5"/>
+                        <outlet property="toolButton" destination="YCH-cC-zaI" id="K2d-RC-sjj"/>
+                        <outlet property="undoButton" destination="kX3-9d-Xt7" id="COw-Ib-z2f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rz-3u-qCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="786"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -270,4 +439,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="do9-zw-65g"/>
+    </inferredMetricsTieBreakers>
 </document>

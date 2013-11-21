@@ -13,6 +13,7 @@
 #import "FloorBarrier.h"
 #import "WallBarrier.h"
 #import "MultiUnits.h"
+#import <MessageUI/MessageUI.h>
 
 
 @interface ViewController : UIViewController <UITextFieldDelegate> {
@@ -55,6 +56,7 @@
 @property (strong, nonatomic) Floor *floo;
 @property (strong, nonatomic) Wall *wall;
 @property (strong, nonatomic) Units *unit;
+@property (strong, nonatomic) NSString *multiSwitchStatus;
 
 
 
@@ -70,6 +72,7 @@
 - (void)changeSwitch:(id)sender;
 - (IBAction)multiSwitched:(id)sender;
 - (IBAction)calculatemTotal:(id)sender;
+- (IBAction)manualEmailButton:(id)sender;
 
 
 

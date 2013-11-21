@@ -39,6 +39,7 @@
     self.mtotalButton.layer.borderWidth = 0.6f;
     self.mtotalButton.layer.cornerRadius = 10.0f;
     self.mtotalButton.layer.backgroundColor = [UIColor orangeColor].CGColor;
+    self.multiSwitchStatus = @"ON";
 
     
     
@@ -242,6 +243,7 @@
         self.floorTextLabel.textColor = [UIColor blackColor];
         self.totalButton.titleLabel. textColor = [UIColor whiteColor];
         self.totalLabel.textColor = [UIColor grayColor];
+        self.multiSwitchStatus = @"ON";
         
     } else{
         // Execute any code when the switch is OFF
@@ -260,6 +262,7 @@
         self.floorTextLabel.textColor = [UIColor blackColor];
         self.totalButton.titleLabel. textColor = [UIColor blackColor];
         self.totalLabel.textColor = [UIColor blackColor];
+        self.multiSwitchStatus = @"OFF";
         
     
     }
@@ -276,31 +279,100 @@
 - (IBAction)calculatemTotal:(id)sender {
 }
 
-    //- (IBAction)pickedFloor:(id)sender {
-    // int floorCost = 300;
-    //self.plasticCost = [[NSNumber numberWithInt:floorCost] floatValue];
+- (IBAction)manualEmailButton:(id)sender {
+//put variables
+    NSString *length = self.lengthTextField.text;
+    NSString *width = self.widthTextField.text;
+    NSString *follow = self.followupTextField.text;
+    NSString *encasement = self.encasementsTextField.text;
+    NSString *interceptors = self.interceptorsTextField.text;
+    NSString *wall = self.wallTextField.text;
+    NSString *floor = self.floorTextField.text;
+    NSString *manualcost = self.manualcostLabel.text;
+    NSString *followcost = self.followupcostLabel.text;
+    NSString *extracost = self.extracostsLabel.text;
+    NSString *totalcost = self.totalLabel.text;
+    NSString *multiswitch = self.multiSwitchStatus;
+    NSString *mtotal = self.mtotalLabel.text;
     
-    // Mark button as selected
-    //self.floorButton.layer.borderColor = [UIColor blueColor].CGColor;
-    //self.floorButton.layer.borderWidth = 0.5f;
-    //self.floorButton.layer.cornerRadius = 10.0f;
+    //email subject
+    NSString *emailTitle = @"Estimate";
     
-    // Mark the wall btn unselected
-    //self.wallButton.layer.borderWidth = 0;
     
-    //}
+    //email content
+    NSString *messageBody = @"<h1>Manual Estimate</h1><h3>Please add estimate to PestPac!</h3>";
     
-    //- (IBAction)pickedWall:(id)sender {
-    // int wallCost = 125;
-    // self.plasticCost = [[NSNumber numberWithInt:wallCost] floatValue];
+    messageBody =
+    [[[[[[[[[[[[[[[@"<h1>Manual Estimate</h1><h3>Please add estimate to PestPac!</h3><p>Length: "
+              stringByAppendingString: length]
+             stringByAppendingString:@"<br />Width: "]
+            stringByAppendingString: width]
+           stringByAppendingString:@"<br /><br />Number of follow-ups: "]
+          stringByAppendingString: follow]
+         stringByAppendingString:@"<br />Number of encasements: "]
+        stringByAppendingString: encasement]
+       stringByAppendingString:@"<br />Number of interceptors: "]
+      stringByAppendingString: interceptors]
+     stringByAppendingString:@"<br /><br />"]
+    stringByAppendingString:@"<br />Number of floor barriers: "]
+    stringByAppendingString: floor]
+    stringByAppendingString:@"<br />Number of wall barriers: "]
+     stringByAppendingString: wall]
+     stringByAppendingString:@"<br /><br />"];
     
-    // Mark meter as selected
-    //self.wallButton.layer.borderColor = [UIColor blueColor].CGColor;
-    //self.wallButton.layer.borderWidth = 0.5f;
-    //self.wallButton.layer.cornerRadius = 10.0f;
+
+    messageBody = [[[[[[[[[messageBody stringByAppendingString:@"<br /><strong>Manual cost:</strong> "]
+                          stringByAppendingString: manualcost]
+                         stringByAppendingString:@"<br /><strong>Follow-up cost:</strong> "]
+                        stringByAppendingString: followcost]
+                       stringByAppendingString:@"<br /><strong>Extra cost:</strong> "]
+                      stringByAppendingString: extracost]
+                     stringByAppendingString:@"</p><h4>Total: "]
+                    stringByAppendingString: totalcost]
+                   stringByAppendingString:@"</h4>"];
     
-    // Mark wall unselected
-    //self.wallButton.layer.borderWidth = 0;
+    if ([multiswitch isEqual: @"ON"]) {  //was multiSwitchStatus
+        messageBody = [[[messageBody stringByAppendingString:@"<h4>Multi-total: "] stringByAppendingString: mtotal] stringByAppendingString:@"</h4>"];
+    }
+    
+    //to address
+    NSArray *toRecipents = [NSArray arrayWithObjects:@"gabriel@pestecipm.com", nil];
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:YES];
+    [mc setToRecipients:toRecipents];
+    
+    //present email to view controller
+
+    [self presentViewController:mc animated:YES completion: NULL];
+    
+}
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error;
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
 
 
 - (IBAction)mtotalButton:(UIButton *)sender {
